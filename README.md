@@ -4,7 +4,7 @@
 Welcome to my BMI Calculator project, where I explored the art of customizing Flutter Widgets to bring unique and captivating user interfaces to life. This project enabled me to transform unconventional designs into reality using the power of Flutter.
 
 ## What I Created
-In this endeavor, I proudly present a Body Mass Index (BMI) Calculator, drawing inspiration from the captivating designs by Ruben Vaalt. The app is a multi-screen marvel, offering straightforward functionality while showcasing a richly customized aesthetic.
+In this endeavor, I proudly present a Body Mass Index (BMI) Calculator, drawing inspiration from the captivating designs by <a href="https://dribbble.com/shots/4585382-Simple-BMI-Calculator">Ruben Vaalt</a>. The app is a multi-screen marvel, offering straightforward functionality while showcasing a richly customized aesthetic.
 
 
 <img src=
