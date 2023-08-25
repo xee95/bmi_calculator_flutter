@@ -11,8 +11,10 @@ import 'components/round_icon_button.dart';
 import 'package:weight_slider/weight_slider.dart';
 import 'dart:math' as math;
 
-const activeColorCard = Colors.purple;
-const inactiveCardColor = Color(0xff8c8a8a);
+const activeColorCard = Color(0xFF1d1E33);
+const inactiveCardColor = Color(0xff111328);
+const iconActive =Color(0xFFEB1555);
+    const iconInActive = Color(0x29EB1555);
 
 enum Gender {
   male,
@@ -25,8 +27,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inactiveCardColor;
-  Color femaleCardColor = inactiveCardColor;
+  Color maleCardColor = kActiveCardColour;
+  Color femaleCardColor = kInactiveCardColour;
   Gender? selectedGender;
   int height = 180;
   int weight = 60;
@@ -46,14 +48,14 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle(
-          systemNavigationBarColor: Colors.blue, // Navigation bar
-          statusBarColor: Colors.white, // Status bar
+          systemNavigationBarColor: Color(0xFF0A0E21), // Navigation bar
+          statusBarColor: Color(0xFF0A0E21), // Status bar
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
           'BMI CALCULATOR',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: Column(
@@ -70,11 +72,14 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     color: selectedGender == Gender.male
-                        ? activeColorCard
-                        : inactiveCardColor,
+                        ? kActiveCardColour
+                        : kInactiveCardColour,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: "Male",
+                      color: selectedGender == Gender.male
+                          ? iconActive
+                          : iconInActive,
                     )),
               ),
               Expanded(
@@ -85,18 +90,21 @@ class _InputPageState extends State<InputPage> {
                   });
                 },
                 color: selectedGender == Gender.female
-                    ? activeColorCard
-                    : inactiveCardColor,
+                    ? kActiveCardColour
+                    : kInactiveCardColour,
                 cardChild: IconContent(
                   icon: FontAwesomeIcons.venus,
                   label: "Female",
+                  color: selectedGender == Gender.female
+                      ? iconActive
+                      : iconInActive,
                 ),
               ))
             ],
           )),
           Expanded(
               child: BoxContainerWidget(
-            color: activeColorCard,
+            color: kActiveCardColour,
             cardChild: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -122,7 +130,7 @@ class _InputPageState extends State<InputPage> {
                 SliderTheme(
                   data: SliderTheme.of(context).copyWith(
                     inactiveTrackColor: Color(0xFF8D8E98),
-                    activeTrackColor: Color(0xFFEB1555),
+                    activeTrackColor: Colors.white,
                     thumbColor: Color(0xFFEB1555),
                     overlayColor: Color(0x29EB1555),
                     thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
@@ -147,7 +155,7 @@ class _InputPageState extends State<InputPage> {
             children: [
               Expanded(
                 child: BoxContainerWidget(
-                  color: inactiveCardColor,
+                  color: kActiveCardColour,
                   cardChild: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -204,7 +212,7 @@ class _InputPageState extends State<InputPage> {
               ),
               Expanded(
                   child: BoxContainerWidget(
-                color: inactiveCardColor,
+                color: kActiveCardColour,
                 cardChild: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -274,6 +282,7 @@ class BoxContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onPress,
       child: Container(
         margin: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
@@ -282,12 +291,11 @@ class BoxContainerWidget extends StatelessWidget {
               // assign the color to the border color
               color: color,
             ),
-            color: Colors.white,
+            color: color,
             borderRadius: BorderRadius.circular(10.0)),
         height: 200.0,
         child: cardChild,
       ),
-      onTap: onPress,
     );
   }
 }

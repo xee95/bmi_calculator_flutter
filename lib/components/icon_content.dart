@@ -6,10 +6,11 @@ const kLabelTextStyle = TextStyle(
 );
 
 class IconContent extends StatelessWidget {
-  IconContent({this.icon, this.label});
+  IconContent({required this.icon, this.label, required this.color});
 
   final IconData? icon;
   final String? label;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class IconContent extends StatelessWidget {
       children: <Widget>[
         Icon(
           icon,
-          color: Color(0xffF29C6C),
+          color: color,
           size: 80.0,
         ),
         SizedBox(

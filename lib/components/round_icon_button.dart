@@ -13,11 +13,11 @@ class RoundIconButton extends StatelessWidget {
       child: Icon(icon),
       onPressed: onPressed,
       constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
+        width: 46.0,
+        height: 46.0,
       ),
       shape: CircleBorder(),
-      fillColor: Colors.purple,
+      fillColor: Color(0xFFEB1555),
     );
   }
 }
