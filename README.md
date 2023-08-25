@@ -8,7 +8,7 @@ In this endeavor, I proudly present a Body Mass Index (BMI) Calculator, drawing 
 
 
 <img src=
-"https://github.com/xee95/bmi_calculator_flutter/assets/35934083/b645c9be-7bea-4270-9c44-dc8e4129b669" width="300" height="500">
+"https://github.com/xee95/bmi_calculator_flutter/assets/35934083/b645c9be-7bea-4270-9c44-dc8e4129b669" width="250" height="500">
 
 ## What I Learned
 Throughout this journey, I gained a wealth of knowledge, including:
